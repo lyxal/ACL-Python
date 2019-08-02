@@ -1,4 +1,6 @@
+#Credit to Hanzlu (maker of the original language)
 #Advanced Computer Language --> Python port
+#literally just a line-by-line translation. no original algorithms here. go check out the original java interpeter
 
 import random
 
@@ -8,7 +10,7 @@ class ACL:
             print("File to interpret? ")
             fileName: str = input()
 
-            file= open(fileName)
+            file = open(fileName)
             code: str = file.read()
             file.close()
 
@@ -69,13 +71,13 @@ class ACL:
             elif c == "E":
                 t = ""
                 for x in range(0, i + 1):
-                    t += code[i]
+                    t += code[x]
                 t += f
 
                 for x in range(i + 1, l):
-                    t += code[i]
+                    t += code[x]
 
-                code += t
+                code = t
                 l = len(code)
 
             i += 1
@@ -145,7 +147,7 @@ class ACL:
                     i -= 1
                     while x != 0:
                         i -= 1
-
+                        
                         if code[i] == "7":
                             x += 1
                         elif code[i] == "5":
@@ -175,9 +177,9 @@ class ACL:
                     print(cOutput)
                     cOutput = ""
                 elif memory[ptr] == 1:
-                    cOutput += self.toDec(bOutput)
+                    cOutput += str(self.toDec(bOutput))
                 else:
-                    cOutput += chr(self.toDec(bOutput))
+                    cOutput += str(chr(self.toDec(bOutput)))
 
                 bOutput = ""
 
